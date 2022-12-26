@@ -7,8 +7,8 @@ const instance = axios.create({
     "Content-Type": "application/json",
   },
 });
-// instance.defaults.headers.common[
-//   "Authorization"
-// ] = `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl9pZCI6IjRmZjM3YzYzLTg4ZjAtNDE5My04MTJkLWU4OTVkZDQ4MzgzNCIsInVzZXJfaWQiOiI2MzU3NzllNTIyYjEwMjE0M2M2ZjNlZTYiLCJpYXQiOjE2NjY5MzY5MzZ9.QxwtjsSzusqE65IHGYDyu2Tb3x16oIiTix4L7mEwFY8`;
-// https://tourbackendproject.herokuapp.com/
+instance.defaults.headers.common[
+  "Authorization"
+] = `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl9pZCI6ImJlODdiMjYwLTFhMTEtNDY0MC1iMzdkLTk4ZmI5YzQ5ZmI2NSIsInVzZXJfaWQiOiI2Mzg4ZWU0NWIxMzk5MTU2OWM0ZTdiMzAiLCJpYXQiOjE2NzIwNjYyNzd9.v22ZaaX_ZFrVIlWf6gaF7w1q1U3x0VJxiGYTKpDpeEI`;
+
 export default instance;
