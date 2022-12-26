@@ -21,17 +21,16 @@ const Gallery = () => {
       });
   }, []);
   const Delete = (e, el) => {
-    console.log(el._id);
     axios
       .delete(`tours/${el._id}`)
       .then((res) => {
-        console.log(res);
+     
         setShow(true);
         axios
           .get("tours")
           .then((res) => {
-            console.log(res);
-            setData(res.data.data);
+            
+            setData(res.data.data.data);
           })
           .catch((err) => {
             console.log(err);
@@ -48,7 +47,7 @@ const Gallery = () => {
   const onConfirm = () => {
     setShow(false);
   };
-  const onConfirmEdit = () => {};
+  
   const onCancelEdit = () => {
     setEditShow(false);
   };
@@ -86,7 +85,7 @@ const Gallery = () => {
                 <div className="mx-0">
                   <img
                     className="mx-auto rounded-t-3xl h-60"
-                    src={`https://travel-back.onrender.com/uploads/${el.img}`}
+                    src={`https://starfish-app-a5xrm.ondigitalocean.app/uploads/${el.img}`}
                     alt={el.img}
                   />
                 </div>

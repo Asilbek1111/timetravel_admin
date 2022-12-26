@@ -87,7 +87,7 @@ const AddPortners = () => {
         ></SweetAlert>
         <div className="mx-6 rounded-md shadow-lg p-4">
           <h1 className="text-center font-bold text-2xl font-niramit hover:text-DarkBlue">
-            Add new Portner
+            Add new Gallery
           </h1>
           <div>
             <p className="my-4">Image</p>

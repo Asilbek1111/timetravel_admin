@@ -12,7 +12,7 @@ const Tour = () => {
   const [title_ru, setTitle_ru] = useState("");
   const [description_eng, setDescription_eng] = useState("");
   const [description_ru, setDescription_ru] = useState("");
-  const [price, setPrice] = useState();
+  const [price, setPrice] = useState("");
   const [name_en, setname_en] = useState("");
   const [name_ru, setname_ru] = useState("");
   const [name_uz, setname_uz] = useState("");
@@ -22,6 +22,10 @@ const Tour = () => {
   const [location, setLocation] = useState("");
   const [imgSrc, setImgSrc] = useState(null);
   const [image, setImage] = useState(null);
+  const [checked, setChecked] = useState(false);
+  function toggle(value) {
+    return !value;
+  }
   console.log(image);
   console.log(file);
   console.log(title_eng);
@@ -43,13 +47,13 @@ const Tour = () => {
   };
   const Submit = (e) => {
     const formData = new FormData();
-    formData.append("isTop", "true");
+    formData.append("isTop", checked);
     formData.append("title_ru", name_ru);
     formData.append("title_eng", name_en);
     formData.append("description_eng", role_en);
     formData.append("description_ru", role_ru);
-    formData.append("location", "here");
-    formData.append("price", "500");
+    formData.append("location", location);
+    formData.append("price", price);
     formData.append("file", image[0]);
     console.log(formData);
     e.preventDefault();
@@ -100,7 +104,7 @@ const Tour = () => {
         ></SweetAlert>
         <div className="mx-6 rounded-md shadow-lg p-4">
           <h1 className="text-center font-bold text-2xl font-niramit hover:text-DarkBlue">
-            Add new Team member
+            Add new Tour 
           </h1>
           <div>
             <p className="my-4">Name:</p>
@@ -125,16 +129,7 @@ const Tour = () => {
                   className="placeholder-secondaryGray border-gray-300 border-lovelyBlue shadow rounded font-jost text-base py-2 px-3 border w-full"
                 />
               </div>
-              <div className="w-full">
-                <span>Uz:</span>
-                <input
-                  value={name_uz}
-                  onChange={(e) => setname_uz(e.target.value)}
-                  placeholder="Наше туристическое агентство - лучшее из лучших во всем мире ....."
-                  autoComplete="off"
-                  className="placeholder-secondaryGray border-gray-300 border-lovelyBlue shadow rounded font-jost text-base py-2 px-3 border w-full"
-                />
-              </div>
+              
             </div>
             <p className="my-4">Role:</p>
             <div className="mt-4 flex justify-between">
@@ -158,17 +153,39 @@ const Tour = () => {
                   className="placeholder-secondaryGray border-gray-300 border-lovelyBlue shadow rounded font-jost text-base py-2 px-3 border w-full"
                 />
               </div>
+              
+            </div>
+            {/* extra */}
+            <div className="mt-4 flex justify-between">
               <div className="w-full">
-                <span>Uz:</span>
+                <span>Location:</span>
                 <input
-                  value={role_uz}
-                  onChange={(e) => setrole_uz(e.target.value)}
-                  placeholder="Наше туристическое агентство - лучшее из лучших во всем мире ....."
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                  placeholder="Location please"
+                  autoComplete="off"
+                  className="placeholder-secondaryGray border-gray-300 border-lovelyBlue shadow rounded font-jost text-base py-2 px-3 border w-full"
+                />
+              </div>
+              <div className="w-full mx-5">
+                <span>Price</span>
+                <input
+                  type="number"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                  placeholder="Price please"
                   autoComplete="off"
                   className="placeholder-secondaryGray border-gray-300 border-lovelyBlue shadow rounded font-jost text-base py-2 px-3 border w-full"
                 />
               </div>
             </div>
+            {/* end_extra */}
+            <label style={{ marginTop: "2rem" }}>Popular?</label>
+            <input
+              type="checkbox"
+              checked={checked}
+              onChange={() => setChecked(toggle)}
+            />
             <p className="my-4">Image</p>
             <div className="mt-4 flex justify-between">
               <div className="w-full md:w-1/5 text-center">
@@ -180,6 +197,7 @@ const Tour = () => {
                       className="object-cover object-center mx-auto"
                     />
                   </label>
+
                   <input
                     type="file"
                     id="imgDoctor"

@@ -85,7 +85,7 @@ const Portners = () => {
         focusCancelBtn
       ></SweetAlert>
       <h1 className="text-gray-900 hover:text-DarkBlue text-2xl font-bold text-center">
-        Portners
+        Gallery
       </h1>
       <div className="m-20 grid grid-cols-1 md:grid-cols-3">
         {data.map((el) => (
@@ -95,7 +95,7 @@ const Portners = () => {
                 <div className="mx-0">
                   <img
                     className="mx-auto rounded-t-3xl h-60"
-                    src={`https://travel-back.onrender.com/uploads/${el.img}`}
+                    src={`https://starfish-app-a5xrm.ondigitalocean.app/uploads/${el.img}`}
                     alt={el.img}
                   />
                 </div>

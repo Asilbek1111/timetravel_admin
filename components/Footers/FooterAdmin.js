@@ -13,7 +13,7 @@ export default function FooterAdmin() {
                 <span
                   className="text-DarkBlue hover:text-blueGray-700 text-sm font-semibold py-1"
                 >
-                Mushtoq ko'zlar
+                TimeTravel
                 </span>
               </div>
             </div>

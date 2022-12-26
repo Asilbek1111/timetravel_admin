@@ -69,12 +69,12 @@ export default function Sidebar() {
             <hr className="my-4 md:min-w-full" />
             {/* Heading */}
             <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
-              Admin Layout Pages
+              TimeTravel Admin
             </h6>
             {/* Navigation */}
 
             <ul className="md:flex-col md:min-w-full flex flex-col list-none">
-              <li className="items-center">
+              {/* <li className="items-center">
                 <Link href="/">
                   <a
                     href="#pablo"
@@ -96,9 +96,9 @@ export default function Sidebar() {
                     Adding News
                   </a>
                 </Link>
-              </li>
+              </li> */}
 
-              <li className="items-center">
+              {/* <li className="items-center">
                 <Link href="/tables">
                   <a
                     href="#pablo"
@@ -120,7 +120,7 @@ export default function Sidebar() {
                     News
                   </a>
                 </Link>
-              </li>
+              </li> */}
 
               <li className="items-center">
                 <Link href="/AddHotel">
@@ -145,7 +145,7 @@ export default function Sidebar() {
                   </a>
                 </Link>
               </li>
-              <li className="items-center">
+              {/* <li className="items-center">
                 <Link href="/Hotels">
                   <a
                     href="#pablo"
@@ -167,8 +167,8 @@ export default function Sidebar() {
                     Team Members
                   </a>
                 </Link>
-              </li>
-              <li className="items-center">
+              </li> */}
+              {/* <li className="items-center">
                 <Link href="/addPopularTours">
                   <a
                     href="#pablo"
@@ -190,8 +190,8 @@ export default function Sidebar() {
                     New Sponsor
                   </a>
                 </Link>
-              </li>
-              <li className="items-center">
+              </li> */}
+              {/* <li className="items-center">
                 <Link href="/PopularTours">
                   <a
                     href="#pablo"
@@ -213,30 +213,7 @@ export default function Sidebar() {
                     Sponsors
                   </a>
                 </Link>
-              </li>
-              <li className="items-center">
-                <Link href="/AddGalery">
-                  <a
-                    href="#pablo"
-                    className={
-                      "text-xs hover:text-DarkBlue uppercase py-3 font-bold block " +
-                      (router.pathname.indexOf("/admin/tables") !== -1
-                        ? "text-lightBlue-500 hover:text-lightBlue-600"
-                        : "text-blueGray-700 hover:text-blueGray-500")
-                    }
-                  >
-                    <i
-                      className={
-                        "fas fa-table mr-2 text-sm " +
-                        (router.pathname.indexOf("/admin/tables") !== -1
-                          ? "opacity-75"
-                          : "text-blueGray-300")
-                      }
-                    ></i>{" "}
-                    New gallery
-                  </a>
-                </Link>
-              </li>
+              </li> */}
               <li className="items-center">
                 <Link href="/Gallery">
                   <a
@@ -260,6 +237,30 @@ export default function Sidebar() {
                   </a>
                 </Link>
               </li>
+              {/* <li className="items-center">
+                <Link href="/AddGalery">
+                  <a
+                    href="#pablo"
+                    className={
+                      "text-xs hover:text-DarkBlue uppercase py-3 font-bold block " +
+                      (router.pathname.indexOf("/admin/tables") !== -1
+                        ? "text-lightBlue-500 hover:text-lightBlue-600"
+                        : "text-blueGray-700 hover:text-blueGray-500")
+                    }
+                  >
+                    <i
+                      className={
+                        "fas fa-table mr-2 text-sm " +
+                        (router.pathname.indexOf("/admin/tables") !== -1
+                          ? "opacity-75"
+                          : "text-blueGray-300")
+                      }
+                    ></i>{" "}
+                    New gallery
+                  </a>
+                </Link>
+              </li> */}
+
               <li className="items-center">
                 <Link href="/AddSlider">
                   <a
