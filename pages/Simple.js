@@ -9,23 +9,14 @@ import axios from "../axios";
 const Home = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [token, setToken] = useState(false);
+  const checkout =
+    typeof window !== "undefined" ? localStorage.getItem("token") : null;
   useEffect(() => {
-    setIsLoading(true);
-    axios
-      .get("users/me")
-      .then((res) => {
-        if (localStorage.getItem("token")) {
-          setToken(true);
-        }
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-        setToken(true);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
+    if (checkout) {
+      setToken(true);
+    } else {
+      setToken(false);
+    }
   }, []);
   return (
     <div>
@@ -36,28 +27,24 @@ const Home = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        {isLoading ? (
-          <div>loading...</div>
-        ) : (
+        {token ? (
           <>
-            {token ? (
-              <div>
-                <Sidebar />
-                <div className="relative md:ml-64 bg-blueGray-100">
-                  <AdminNavbar colors={props.colors} />
-                  <div className="relative md:pt-32 pb-32 pt-12"></div>
-                  <div className="px-4 md:px-10 mx-auto w-full">
-                    {props.children}
-                    {/* <Settings/> */}
-                    {/* <Table/> */}
-                    <FooterAdmin />
-                  </div>
+            <div>
+              <Sidebar />
+              <div className="relative md:ml-64 bg-blueGray-100">
+                <AdminNavbar colors={props.colors} />
+                <div className="relative md:pt-32 pb-32 pt-12"></div>
+                <div className="px-4 md:px-10 mx-auto w-full">
+                  {props.children}
+                  {/* <Settings/> */}
+                  {/* <Table/> */}
+                  <FooterAdmin />
                 </div>
               </div>
-            ) : (
-              <SignIn />
-            )}
+            </div>
           </>
+        ) : (
+          <SignIn />
         )}
       </main>
     </div>

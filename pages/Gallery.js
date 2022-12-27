@@ -24,12 +24,10 @@ const Gallery = () => {
     axios
       .delete(`tours/${el._id}`)
       .then((res) => {
-     
         setShow(true);
         axios
           .get("tours")
           .then((res) => {
-            
             setData(res.data.data.data);
           })
           .catch((err) => {
@@ -47,7 +45,7 @@ const Gallery = () => {
   const onConfirm = () => {
     setShow(false);
   };
-  
+
   const onCancelEdit = () => {
     setEditShow(false);
   };
@@ -75,7 +73,7 @@ const Gallery = () => {
         focusCancelBtn
       ></SweetAlert>
       <h1 className="text-gray-900 hover:text-DarkBlue text-2xl font-bold text-center">
-        Gallery
+        Tours
       </h1>
       <div className="m-20 grid grid-cols-1 md:grid-cols-3">
         {data.map((el) => (

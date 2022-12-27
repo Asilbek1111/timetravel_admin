@@ -18,9 +18,7 @@ const Tour = ()=>{
   const [location, setLocation]= useState('')
   const [imgSrc, setImgSrc] = useState(null)
   const [image, setImage]= useState(null)
-  console.log(image)
-  console.log(file)
-  console.log(title_en)
+  
   const handleImageUpload = (e) => {
     console.log(e)
     const img = e.target.files

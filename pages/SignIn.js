@@ -7,18 +7,22 @@ const SignIn = () => {
   const [success, setSuccess] = useState(false);
   const [fail, setFail] = useState(false);
   const [password, setPassword] = useState("");
-  const Submit = () => {
-    axios
-      .post("users/login", { email: login, password })
-      .then((res) => {
-        console.log(res);
-        localStorage.setItem("token", res.data.data.token);
-        window.location.reload();
-      })
-      .catch((err) => {
-        console.log(err);
-        alert("email yoki parol notugri");
-      });
+ 
+   const Submit = () => {
+     axios
+       .post("users/login", { email: login, password })
+       .then((res) => {
+         console.log(res);
+         localStorage.setItem("token", res.data.data.token);
+         window.location.reload();
+       })
+       .catch((err) => {
+         console.log(err);
+         alert("email yoki parol notugri");
+       });
+   };
+ 
+  
     // if(login === 'AdminTour' && password === '8866'){
     //     setSuccess(true)
     //     router.reload()
@@ -26,7 +30,6 @@ const SignIn = () => {
     //     null
     //     setFail(true)
     // }
-  };
   const onConfirm = () => {
     setSuccess(false);
     setFail(false);

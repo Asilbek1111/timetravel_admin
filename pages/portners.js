@@ -85,7 +85,7 @@ const Portners = () => {
         focusCancelBtn
       ></SweetAlert>
       <h1 className="text-gray-900 hover:text-DarkBlue text-2xl font-bold text-center">
-        Gallery
+        Galery
       </h1>
       <div className="m-20 grid grid-cols-1 md:grid-cols-3">
         {data.map((el) => (
